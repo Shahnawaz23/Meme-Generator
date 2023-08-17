@@ -4,7 +4,7 @@ import memesData  from '../memesData';
 
 let url
 export default function Meme() {
-  let [memeImage, setMemeImage] = useState("");
+  let [memeImage, setMemeImage] = useState("http://i.imgflip.com/1bij.jpg");
   function getMemeImage() {
       const memesArray = memesData.data.memes
       const randomNumber = Math.floor(Math.random() * memesArray.length)
@@ -22,7 +22,12 @@ export default function Meme() {
           {/* <p>{url}</p> */}
         <button className='form-button' onClick={getMemeImage}>Get a new meme image 🖼</button>
       </main>
-      <img src={memeImage} alt="meme Image" className='meme-image'/>
+      <div className="meme">
+        <img src={memeImage} alt="meme Image" className='meme-image'/>
+        <h2 className='meme-text top'>One does not simply</h2>
+        <h2 className='meme-text bottom'>Walk into mordor</h2>
+      </div>
+      
     </div>
   );
 }
