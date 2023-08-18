@@ -1,6 +1,5 @@
 import React, {useEffect, useState} from 'react'
 
-let url
 export default function Meme() {
   
   let [meme, setMeme] = useState({
@@ -19,7 +18,7 @@ export default function Meme() {
 
    function getMemeImage() {
       const randomNumber = Math.floor(Math.random() * memeImage.length)
-      url = memeImage[randomNumber].url
+      const url = memeImage[randomNumber].url
       setMeme(prevMeme => ({
         ...prevMeme,
         randomImage: url
